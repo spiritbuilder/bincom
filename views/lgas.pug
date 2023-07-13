@@ -1,0 +1,36 @@
+html
+  head
+    title= "lgas"
+    script
+        include ../scripts/lga.js  
+  body
+    h1= lgs
+    br
+    br
+    select(name="polls" id="lgas"  )
+        each val in options   
+            option(value=val selected=val==lgs)=val
+                a(href="/lgas?lga="+val)
+
+    br
+    table
+        tr 
+            th="Political Party"
+            th="Score"
+        each vl, x in results
+            tr 
+            td=x
+            td=vl
+        tr 
+            td="Total"
+            td=total
+    br
+    br
+    br
+    ul 
+        li
+            a(href="/units")="View by Polling Units" 
+        li
+            a(href="/")="Home"
+        
+
