@@ -1,6 +1,4 @@
 import db from "../db.js";
-// console.log(Object.keys(db));
-// console.log(Object.keys(db["announced_pu_results"][0]));
 console.log(Object.keys(db["polling_unit"][0]));
 console.log(Object.keys(db["lga"][0]));
 let uniqueIds = new Set();
@@ -20,10 +18,8 @@ db.polling_unit.map((m) => {
       aggregator[m.polling_unit_name] = { uniqueIds: [m.uniqueid] };
     }
   }
-  // if (m.uniqueid == 209) console.log(m);
 });
 
-// console.log(aggregator);
 db["announced_pu_results"].map((m) => {
   let units = Object.keys(aggregator);
   for (let i = 0; i < units.length; i++) {
@@ -44,10 +40,6 @@ Object.keys(aggregator).map((m) => {
   }
 });
 
-// console.log(Object.keys(actualAggregate).length);
-// console.log(db["announced_pu_results"].length);
-
-// console.log(actualAggregate)
 
 let lgaCummulated = {};
 
